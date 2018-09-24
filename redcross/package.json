@@ -1,0 +1,17 @@
+{
+  "name": "redcross",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "mdi": "^2.2.43"
+  },
+  "devDependencies": {
+    "angular-material-data-table": "^0.10.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikola Kostić",
+  "license": "ISC"
+}

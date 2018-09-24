@@ -1,0 +1,103 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <p><strong>Profiles</strong></p>
+
+        <!-- Calling event for opening sidebar -->
+        <md-button ng-click="openSidebar()">
+            <md-icon class="mdi mdi-plus-circle"></md-icon>
+            Add new Volounteer
+        </md-button>
+
+        <!--Search-->
+        <md-button ng-click="showFilters = true">
+            <md-icon class="mdi mdi-magnify"></md-icon>
+            Filters
+        </md-button>
+    </div>
+</md-toolbar>
+<!--Filter layout-->
+<div class="filters" layout="row" layout-align="center center" ng-show="showFilters" >
+    <md-input-container>
+        <label>Search profile</label>
+        <input type="text" ng-model="profileFilter">
+    </md-input-container>
+
+    <!-- Event for ng-click clear -->
+    <div layout="row" style="margin-bottom:11px;">
+        <md-button class="md-warn" ng-click="profileFilter=''" >Clear</md-button>
+    </div>
+</div>
+
+<!--Cards Displaying All Profiles-->
+<md-content class="md-padding" layout="row" layout-wrap style="padding-left: 60px;">
+    <md-card class="kartice"  ng-repeat="profile in profiles | filter:profileFilter">
+        <img ng-src=" {{ profile.img }}" alt="image" class="slike">
+        <md-card-content>
+            <div class="profile-info">
+                <h2 class="md-title">{{ profile.name }}</h2>
+                <h3>{{ profile.birthday }}</h3>
+                <p>{{ profile.contact }}</p>
+            </div>
+        </md-card-content>
+        <md-button class="view" ng-click="showAdvanced($event,profile)">View</md-button>
+        <md-button class="update" ng-click="editProfile(profile)">Upadate</md-button>
+        <md-button class="md-warn" ng-click="deleteProfile($ev,profile)">Delete</md-button>
+    </md-card>
+</md-content>
+
+<!--Sidenav for Edit and Upadate-->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+    <md-toolbar>
+        <h1 class="md-toolbar-tools">Profile</h1>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label for="image">Image Link</label>
+                    <input type="text" id="image"
+                    ng-model="profile.img">
+            </md-input-container>
+            <md-input-container>
+                <label for="title">Name</label>
+                <input type="text" id="name"
+                       ng-model="profile.name" md-autofocus>
+            </md-input-container>
+            <md-input-container>
+                <label for="info">Birthday</label>
+                <textarea type="text" id="info"
+                          ng-model="profile.birthday">
+                </textarea>
+            </md-input-container>
+            <md-input-container>
+                <label for="description">Conatact</label>
+                <textarea type="text" id="description"
+                          ng-model="profile.contact">
+                </textarea>
+            </md-input-container>
+            <md-input-container>
+                <label for="description">Skills</label>
+                <textarea type="text" id="description"
+                          ng-model="profile.skills">
+                </textarea>
+            </md-input-container>
+            <md-input-container>
+                <label for="description">Camps</label>
+                <textarea type="text" id="description"
+                           ng-model="profile.camps">
+                </textarea>
+            </md-input-container>
+            <md-button ng-if="!editing" ng-click="saveProfile(profile)" class="md-primary">
+                Save
+            </md-button>
+            <md-button ng-if="editing" ng-click="saveEditProfile()" class="md-good">
+                    Save Edit
+            </md-button>
+            <md-button ng-click="cancelButton()" class="md-warn">
+                Cancel
+            </md-button>
+            <pre> {{ profile | json}} </pre>
+        </form>
+    </md-content>
+</md-sidenav>
+

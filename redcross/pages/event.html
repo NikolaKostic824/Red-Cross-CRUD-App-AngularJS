@@ -1,0 +1,92 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <p><strong>Events</strong></p>
+
+        <!-- Calling event for opening sidebar -->
+        <md-button ng-click="openSidebar()">
+            <md-icon class="mdi mdi-plus-circle"></md-icon>
+            Add new Event
+        </md-button>
+
+        <!--Search-->
+        <md-button ng-click="showFilters = true">
+            <md-icon class="mdi mdi-magnify"></md-icon>
+            Filters
+        </md-button>
+    </div>
+</md-toolbar>
+<!--Filter layout-->
+<div class="filters" layout="row" layout-align="center center" ng-show="showFilters">
+    <md-input-container>
+        <label>Search event</label>
+        <input type="text" ng-model="eventFilter">
+    </md-input-container>
+
+    <!-- Event for ng-click clear -->
+    <div layout="row" style="margin-bottom:11px;">
+        <md-button class="md-warn" ng-click="eventFilter=''">Clear</md-button>
+    </div>
+</div>
+<!--Sidenav-->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+    <md-toolbar>
+        <h1 class="md-toolbar-tools">Event</h1>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label for="title">Title</label>
+                <input type="text" id="title" ng-model="event.title" md-autofocus>
+            </md-input-container>
+            <md-input-container>
+                <label for="info">Info</label>
+                <textarea type="text" id="info" ng-model="event.info">
+                </textarea>
+            </md-input-container>
+            <md-input-container>
+                <label for="description">Description</label>
+                <textarea type="text" id="description" ng-model="event.description">
+                </textarea>
+            </md-input-container>
+            <md-button ng-if="!editing" ng-click="saveEvent(event)" class="md-primary">
+                Save
+            </md-button>
+            <md-button ng-if="editing" ng-click="saveEdit()" class="md-good">
+                Save Edit
+            </md-button>
+            <md-button ng-click="cancelButton()" class="md-warn">
+                Cancel
+            </md-button>
+            <pre> {{ event  | json}} </pre>
+        </form>
+    </md-content>
+</md-sidenav>
+
+<!--Display Events-->
+<md-table-container>
+    <table md-table>
+        <thead md-head>
+            <tr md-row>
+                <th md-column md-numeric>Title</th>
+                <th md-column md-numeric>Info</th>
+                <th md-column md-numeric>Description</th>
+                <th md-column md-numeric><span class="options">Options</span></th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr md-row ng-repeat="event in events | filter:eventFilter">
+                <td md-cell>{{event.title}}</td>
+                <td md-cell>{{event.info}}</td>
+                <td md-cell>{{event.description}}</td>
+                <td md-cell>
+                    <md-button class="md-good" ng-click="editEvent(event)">
+                        Update
+                    </md-button> | <md-button ng-click="deleteEvent($ev,event)" class="md-warn">
+                        Delete
+                    </md-button>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="app" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Red cross</title>
+
+    <!-- AngularJs material -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.css">
+    <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.css">
+    <link rel="stylesheet" href="node_modules/angular-material-data-table/dist/md-data-table.min.css">
+
+    <!-- Local Style -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+<!-- Logo and Heading Container -->
+<div class="logo">
+    <img src="img/logo.png" alt="logo.png">
+    <h1>Red Cross of Serbia</h1>
+</div>
+
+<md-nav-bar md-no-ink-bar="disableInkBar" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-sref="event" class="mdi mdi-calendar-today" name="event">Events</md-nav-item>
+    <md-nav-item md-nav-sref="profile" class="mdi mdi-account-box" name="profile">Profiles</md-nav-item>
+</md-nav-bar>
+<br/>
+
+<!-- AngularJs View -->
+<ui-view></ui-view>
+
+<!-- Footer-->
+<footer>
+    <div >
+        <h1 class="nikola">Nikola Kostić &copy; 2018</h1>
+    </div>
+</footer>
+<!-- Angular Scripts -->
+<script src="https://code.angularjs.org/1.7.4/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.7.4/angular-animate.min.js"></script>
+<script src="https://code.angularjs.org/1.7.4/angular-aria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
+<script src="node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<!--Local Scripts-->
+<script src="script/app.js"></script>
+<script src="config/config.js"></script>
+<script src="ctrl/profile.ctrl.js"></script>
+<script src="ctrl/event.ctrl.js"></script>
+<script src="data/event.fac.js"></script>
+<script src="data/profile.fac.js"></script>
+
+</body>
+</html>

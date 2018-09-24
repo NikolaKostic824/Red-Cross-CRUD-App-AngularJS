@@ -1,0 +1,56 @@
+[
+  {
+    "id":1,
+    "img":"img/covek1.png",
+    "name":"Nikola Kostić",
+    "birthday":"11.10.1991",
+    "contact":"069656624",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  },
+  {
+    "id":2,
+    "name":"Sanja Stolić Kostić",
+    "img":"img/zena2.png",
+    "birthday":"14.12.1991",
+    "contact":"069656624",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  },
+  {
+    "id":3,
+    "name":"Nemanja Kostić",
+    "img":"img/covek2.png",
+    "birthday":"12.11.1991",
+    "contact":"069656824",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  },
+  {
+    "id":4,
+    "name":"Marko Marković",
+    "img":"img/covek3.png",
+    "birthday":"11.10.1995",
+    "contact":"064656624",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  },
+  {
+    "id":5,
+    "name":"Rade Kornjača",
+    "img":"img/covek4.png",
+    "birthday":"11.7.1999",
+    "contact":"069886624",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  },
+  {
+    "id":6,
+    "name":"Jelena Janković",
+    "img":"img/zena1.png",
+    "birthday":"1.5.2001",
+    "contact":"069656642",
+    "skills":"PHV,DDK,Trgovina ljudima,Romski Vrtic",
+    "camps": "Mp,baosic,Divljana"
+  }
+]
