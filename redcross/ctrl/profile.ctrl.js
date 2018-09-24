@@ -55,6 +55,11 @@ app.controller('profileCtrl', ['$scope','$mdSidenav','$mdToast','profileFactory'
             .ok('Yes')
             .cancel('Nope')
             .targetEvent(ev);
+        //Promise After Confirm mdDialog
+        $mdDialog.show(confirm).then(function() {
+            let index = $scope.profiles.indexOf(profile);
+            $scope.profiles.splice(index, 1);
+        }, function() {});
     };
     //showAdvance Function for $mdDialog to Display Modal Profile
     $scope.showAdvanced = function(event,profile) {
